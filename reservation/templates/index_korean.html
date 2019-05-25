@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+{% load staticfiles %}
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <title>Korean</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <link rel="stylesheet" href="{% static 'design.css' %}" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=B612+Mono|Noto+Sans+KR" rel="stylesheet">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        </head>
+        <body>
+            <!-- navbar -->
+            
+            <!-- header  -->
+            <header class="w3-display-container w3-content w3-wide" style="max-width: 100%;" id="home" >
+                <img class="w3-image w3-opacity-min" src="https://cdn.pixabay.com/photo/2018/06/04/13/36/cold-noodles-3453218_1280.jpg" alt="restaurant" width="100%" height="100">
+                <div class="w3-display-middle w3-margin-top w3-center">
+                    <h1 class="w3-xxlarge w3-text-black">
+                        <p>
+                            <b>한식</b><br>
+                        </p>
+                        <p class="w3-margin-top">
+                            <span class="w3-padding w3-black w3-opacity-min w3-text-white">
+                            <b>Korean Cuisine</b>
+                            </span>
+                        </p>
+                    </h1>
+                </div>
+            </header>
+        
+            <!-- page main -->
+            <main class="w3-content w3-padding" style="max-width: 1564px">
+        
+                <!-- restaurant section -->
+                <div class="w3-container w3-padding-64" id="restaurants">
+                    <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-B612">Korean Restaurants</h1>
+                </div>
+        
+                <div class="w3-row-padding" style="display: flex; flex-wrap: wrap;">
+                    <!-- 군산해물탕 --> 
+                    <div class="w3-col m6 13 w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <div class="w3-display-topleft w3-black w3-padding"><h3>군산 해물탕</h3></div>
+                            <a href="{% url 'korean1_haemooltang' %}">
+                                <img class="w3-hover-opacity" src="https://cdn.pixabay.com/photo/2017/07/19/03/14/lures-and-buy-new-desktop-2517767_1280.jpg" alt="군산해물탕" style="width:99%">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 그옛날풍경 -->
+                    <div class="w3-col m6 13 w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <div class="w3-display-topleft w3-black w3-padding"><h3>그 옛날 풍경</h3></div>
+                            <a href="{% url 'korean2_gpoong' %}">
+                                <img class="w3-hover-opacity" src="https://cdn.pixabay.com/photo/2017/07/10/06/03/korean-food-2489206_1280.jpg" alt="그옛날풍경" style="width:99%">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 대영불고기 -->
+        
+                    <div class="w3-col m6 13 w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <div class="w3-display-topleft w3-black w3-padding"><h3>대영불고기</h3></div>
+                            <img class="w3-hover-opacity" src="https://cdn.pixabay.com/photo/2016/08/10/10/27/pork-1582916_1280.jpg" alt="대영불고기" style="width:99%">
+                        </div>
+                    </div>
+
+                    <!-- 국수나무 -->
+                    <div class="w3-col m6 13 w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <div class="w3-display-topleft w3-black w3-padding"><h3>국수나무</h3></div>
+                            <img class="w3-hover-opacity" src="https://cdn.pixabay.com/photo/2015/04/06/16/21/korean-food-709606_1280.jpg" alt="국수나무" style="width:99%">
+                        </div>
+                    </div>
+                </div>
+        
+            </div> 
+
+            </main>
+            
+        </body>
+        </html>
+</body>
+{% endblock %}
+</html>

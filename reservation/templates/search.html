@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block contents %}
+<div style="margin-top:500px; width:100%; height:500px;">
+    {% for search in search_list %}
+        <td>{{ search.name }}</td>
+        <td>{{ search.store_name }}</td>
+        <td>{{ search.guest_count }}</td>
+        <td>{{ search.pub_date }}</td>
+        <td>{{ search.body }}</td>
+        <br>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+
+<header class="w3-display-container w3-content w3-wide" style="max-width: 100%;" id="home" >
+    <img class="w3-image w3-opacity-min" src="https://cdn.pixabay.com/photo/2017/08/30/17/25/restaurant-2697945_1280.jpg" alt="restaurant" width="100%" height="400">
+        <div class="w3-display-middle w3-center">
+            <h1 class="w3-xxlarge w3-text-black">
+                <p>
+                    <b>빠르고 간편한 맛집 검색</b>
+                    </p>
+                    <p class="w3-margin-top">
+                    <span class="w3-padding w3-black w3-opacity-min w3-text-white">
+                    <b>궁동에서</b>
+                    </span>
+                </p>
+            </h1>
+        </div>        
+    </header>
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>이름</th>
+        <th>가게 이름</th>
+        <th>인원 수</th>
+        <th>날짜</th>
+        <th>내용</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for read_review in read_reviews %}
+    <tr>
+    <td>{{ read_review.name }}</td>
+    <td>{{ read_review.store_name }}</td>
+    <td>{{ read_review.guest_count }}</td>
+    <td>{{ read_review.pub_date }}</td>
+    <td>{{ read_review.body }}</td>
+    </tr>
+    {% endfor %}
+    <br>
+    </tbody>
+</table>
+</body>
+
+{% endblock %}

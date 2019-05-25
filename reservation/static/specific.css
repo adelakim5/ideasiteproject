@@ -1,0 +1,13 @@
+body{
+        font-family: 'Noto+Sans+KRc', sans-serif;
+    }
+.w3-B612{
+        font-family: 'B612 Mono', monospace;
+    }
+#searchbar{
+        padding: 6px;
+        font-size: 17px;
+        border: 1px soild #ccc;
+    }
+      
+    

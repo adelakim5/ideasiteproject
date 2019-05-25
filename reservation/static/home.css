@@ -1,0 +1,60 @@
+@keyframes rolling{
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-20%);
+    }
+    50% {
+        transform: translateY(-40%);
+    }
+    75% {
+        transform: translateY(-60%);
+    }
+    100% {
+        transform: translateY(-80%);
+    }
+}
+
+
+.name{
+    font-size: 40px;
+    line-height: 1.5; 
+    margin-bottom:10px;
+}
+.name-job{
+    display: inline-block;
+    color: white;
+    height: 1.5em;
+    position: relative;
+    overflow: hidden;
+    vertical-align: top;
+    margin-top: 0;
+}
+
+.name-job::after {
+    /* content: '!'; */
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: -1em;  
+    box-shadow: inset 0 0 10px 10px #CFB58B
+}
+
+.name-job-list {
+    animation-name: rolling;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    margin-right: 0.6em;
+    margin-top: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.review-redirect{
+    font-size : 37px;
+    text-decoration: none;
+}

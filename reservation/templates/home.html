@@ -1,145 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>예약하려궁동</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://fonts.googleapis.com/css?family=B612+Mono|Noto+Sans+KR" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <style>
-        body{
-            font-family: 'Noto+Sans+KRc', sans-serif;
-        }
-        .w3-B612{
-            font-family: 'B612 Mono', monospace;
-        }
-        #searchbar{
-            padding: 6px;
-            font-size: 17px;
-            border: 1px soild #ccc;
-        }
-        .container-fluid {
-            padding-top: 70px;
-            padding-bottom: 70px;
-        }
-        .margin {
-             margin-bottom: 55px;
-             margin-top: 45px;
-        }
-        .bg-1 { 
-            background-color: #CFB58B; 
-            color: #ffffff;
-        }
+{% extends 'base.html' %}
 
-        .aboutp{
-            font-size: 16px;
-        }
-       
-    </style>
-</head>
+{% block contents %}
+{% load staticfiles %}
+
+<link href="{% static 'home.css' %}"  rel="stylesheet">
+    
+
 <body>
-    <!-- navbar -->
-    <nav class="w3-top">
-        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-            <a href="{% url 'home' %}" class="w3-bar-item w3-button">예약하려궁동</a>
-            <div>
-                <input class="w3-display-middle" type="text" placeholder="Search.." id="searchbar">
-            </div>
-            <!-- float links to right -->
-            <div class="w3-right w3-hide-small w3-B612">
-                <a href="{% url 'login' %}" class="w3-bar-item w3-button">LOG IN</a>
-                <a href="{% url 'join' %}" class="w3-bar-item w3-button">JOIN</a>
-            </div>
-        </div>
-    </nav>
-    <!-- header  -->
-    <header class="w3-display-container w3-content w3-wide" style="max-width: 1500px;" id="home" >
-        <img class="w3-image w3-opacity-min" src="https://cdn.pixabay.com/photo/2017/08/30/17/25/restaurant-2697945_1280.jpg" alt="restaurant" width="1500" height="400">
-        <div class="w3-display-middle w3-margin-top w3-center">
-            <h1 class="w3-xxlarge w3-text-black">
-                <p>
-                    <b>쉽고 빠른 예약으로 즐거운 한끼를</b>
-                </p>
-                <p>
-                    <span class="w3-padding w3-black w3-opacity-min w3-text-white">
-                    <b>궁동에서</b>
-                    </span>
-                </p>
-            </h1>
-        </div>
-    </header>
-
+        <header class="w3-display-container w3-content w3-wide" style="max-width: 100%;" id="home" >
+                <img class="w3-image w3-opacity-min" src="https://cdn.pixabay.com/photo/2017/08/30/17/25/restaurant-2697945_1280.jpg" alt="restaurant" width="100%" height="400">
+                    <div class="w3-display-middle w3-center">
+                        <h1 class="w3-xxlarge w3-text-black">
+                            <p>
+                                <b>빠르고 간편한 맛집 검색</b>
+                                </p>
+                                <p class="w3-margin-top">
+                                <span class="w3-padding w3-black w3-opacity-min w3-text-white">
+                                <b>궁동에서</b>
+                                </span>
+                            </p>
+                        </h1>
+                    </div>        
+                </header>
+    
     <!-- page main -->
-    <main class="w3-content w3-padding" style="max-width: 1564px">
+    <main class="w3-padding w3-content" style="max-width: 1500px;">
 
-        <!-- restaurant section -->
-        <div class="w3-container w3-padding-64" id="restaurants">
-            <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-B612">Popular Restaurants</h1>
+
+         <!-- category section  -->
+        <div class="w3-container w3-padding-64" id="category">
+            <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-B612">Category</h1>
         </div>
 
         <div class="w3-row-padding">
-            <!-- 누오보나폴리 -->
-            <div class="w3-col m6 13 w3-margin-bottom">
+            <!-- 한식  -->
+            <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding">누오보나폴리</div>
-                    <a href="{% url 'nuovonapoli' %}">
-                        <img src="https://cdn.pixabay.com/photo/2016/04/21/22/50/pizza-1344720_1280.jpg" alt="누오보나폴리" style="width:99%">
-                    </a>
-                </div>
-            </div>
-            <div class="w3-col m6 13 w3-margin-bottom">
-                <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding">Conny's</div>
-                    <img src="https://cdn.pixabay.com/photo/2017/01/15/14/26/barbeque-1981640_1280.jpg" alt="Conny's" style="width:99%">
+                    <div class="w3-display-topleft w3-black w3-padding">한식</div>
+                        <a href="{% url 'index_korean' %}">
+                            <img class="category w3-hover-opacity" src="https://cdn.pixabay.com/photo/2018/06/04/13/36/cold-noodles-3453218_1280.jpg" alt="Korean" style="width:99%">
+                        </a>
                 </div>
             </div>
 
-            <div class="w3-col m6 13 w3-margin-bottom">
+             <!-- 일식  -->
+            <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding">육쌈냉면</div>
-                    <img src="https://cdn.pixabay.com/photo/2018/06/04/13/36/cold-noodles-3453218_1280.jpg" alt="육쌈냉면" style="width:99%">
+                    <div class="w3-display-topleft w3-black w3-padding">일식</div>
+                    <a href="{% url 'index_japanese' %}">
+                        <img class="category w3-hover-opacity" src="https://cdn.pixabay.com/photo/2016/04/26/03/55/salmon-1353598_1280.jpg" alt="Japanese" style="width:99%">
+                    </a>
                 </div>
             </div>
-            <div class="w3-col m6 13 w3-margin-bottom">
+
+            <!-- 양식  -->
+            <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding">맘스터치</div>
-                    <img src="https://cdn.pixabay.com/photo/2018/02/09/08/44/burger-3141127_1280.jpg" alt="맘스터치" style="width:99%">
+                    <div class="w3-display-topleft w3-black w3-padding">양식</div>
+                        <a href="{% url 'index_western' %}">
+                            <img class="category w3-hover-opacity" src="https://cdn.pixabay.com/photo/2016/08/03/05/14/beef-1565904_1280.jpg" alt="western" style="width:99%">
+                        </a>
+                </div>
+            </div>
+
+             <!-- 중식  -->
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">중식</div>
+                        <a href="{% url 'index_chinese' %}">
+                            <img class="category w3-hover-opacity" src="https://cdn.pixabay.com/photo/2019/05/21/15/21/noodle-4219235_1280.jpg" alt="Chinese" style="width:99%">
+                        </a>
                 </div>
             </div>
         </div>
 
         <!-- about section -->
-        <div class="w3-container w3-padding-64 w3-margin-bottom" id="about">
-            <h1 class="w3-B612 w3-border-bottom w3-border-light-grey w3-padding-16 ">About</h1>
-            <p class="w3-B612 margin aboutp">This site is created for the assignment of likelion. The Contents and Ideas are powered by Yangwon Kim, who is currently studying at Chungnam National University in Daejeon, South Korea. This website is made for all people those who wanna make a quick reservation within 5-minuite. In Gungdong neardy CNU, there are so many people-including me^^- wanna enter into a restaurant and have their meals in a short time especially during the lunch time. However, it is seldom easy to find a proper spot where I don't need to stand in a waiting line and immediately order my menu. <br> So, I think about a <b>Quick Reservation Service Program</b> which send a message to restaurant manager that "I will arrive within just 5 minitues! Please hold a table!" With this service, we can save the time to find a proper restaurtant, to wait for entering, and even avoid a lot of stressful situations! Honestly it was created for the assignment of Likelion, but I still desire to implement and provide it to lots of people for their better campus-lunch-life! </p>
-
-        
-                <!-- <div>
-                    <p>주의사항: 
-                        <ul>
-                            <li>5분(내지 10분) 내에 식당에 도착하지 않으면, 걸어두신 예약은 자동으로 취소됩니다.</li>
-                            <li>15분 이상부터 당일 예약은 유료입니다.</li>
-                            <li>익일부터 식당에서 제공하는 예약 가능 날짜에 대한 모든 예약은 무료입니다.</li>
-                        </ul>
-                    </p>
-                </div> -->
+        <div class="w3-container w3-padding-64 w3-margin-bottom" >
+            <a class="w3-B612 w3-border-bottom w3-border-light-grey w3-padding-16 review-redirect" href="{% url 'review_read' %}">Reviews</a>
+        </div>
+               
            <!-- 자기소개 -->
            <div class="container-fluid bg-1 text-center">
-                <h3 class="margin w3-B612"><b>Who Am I?</b></h3>
+                <h3 class="margin w3-B612"><b>Who are We?</b></h3>
                 <img src="https://cdn.pixabay.com/photo/2016/02/07/21/03/computer-1185626_1280.jpg" class="img-responsive" style="display:inline" alt="photo" width="350" height="350">
-                <h3 class="w3-B612">Student, Female, Korean, Psychology, Foodie</h3>
-              </div>
+                <br>
+                <div class="name  w3-B612">
+                    we're
+                    <div class="name-job">
+                        <ul class="name-job-list">
+                            <li>Likelion 7th members</li>
+                            <li>Creators</li>
+                            <li>Students</li>
+                            <li>Foodfighters</li>
+                            <li>Likelion 7th members</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
     </div>
     </main>
-    <!-- footer -->
-    <footer class="w3-center w3-black w3-opacity-min w3-padding-16 w3-B612">
-        <p>All things are created by YangwonKim. <br>
-             This site is yet completed.</p>
-    </footer>
 </body>
+{% endblock %}
 </html>

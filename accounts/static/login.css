@@ -1,0 +1,22 @@
+body{
+    background-image: url(https://images.unsplash.com/photo-1491832318808-5d13a9553e36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=736&q=80);
+    width: 100%; 
+    background-repeat: no-repeat;
+    background-size: cover;   
+}
+.form-container{
+    border:1px
+    solid #fff; 
+    margin-top:16vh;
+    padding:50px 60px;
+    -webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+    box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+    color: #fff
+}
+.form-container input{
+    color:black;
+}
+.footer{
+    margin-top:32vh;
+}

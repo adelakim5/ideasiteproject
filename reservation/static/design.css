@@ -1,0 +1,29 @@
+body{
+    font-family: 'Noto+Sans+KRc', sans-serif;
+}
+.w3-B612{
+    font-family: 'B612 Mono', monospace;
+}
+#searchbar{
+    padding: 6px;
+    font-size: 17px;
+    border: 1px soild #ccc;
+}
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.margin {
+     margin-bottom: 55px;
+     margin-top: 45px;
+}
+.bg-1 { 
+    background-color: #CFB58B; 
+    color: #ffffff;
+}
+
+
+.d-flex {
+    display: flex !important;
+    flex-wrap: wrap !important;
+}

@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=B612+Mono|Noto+Sans+KR" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'specific.css' %}" type="text/css">
+    
+    <title>부연부</title>
+</head>
+<body>
+    <!-- NAVBAR -->
+   
+        <!-- header -->
+        <header class="w3-display-container w3-content w3-wide" style="max-width: 1500px;">
+            <img class="w3-image" src="https://images.unsplash.com/photo-1516211881327-e5120a941edc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjI2MDAzfQ&auto=format&fit=crop&w=1050&q=80" alt="부연부" width="100%">
+            <div class="w3-display-middle w3-margin-top w3-center">
+                <h1 class="w3-xxlarge w3-padding w3-black w3-opacity-min w3-text-white">부연부</h1>
+            </div>
+    </header>
+    <main>
+        
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+                <h2 class="w3-wide w3-center">부연부</h2>
+                <p class="w3-opacity w3-center"><i>대전 유일한 딤섬 전문 중식당</i></p>
+                <div class="w3-row w3-padding-32">
+                  <div>
+                    <i class="fa fa-map-marker" style="width:30px"></i> 대전 유성구 계룡로141번길 21<br>
+                    <i class="fa fa-phone" style="width:30px"></i> Phone: 042-826-8008<br>
+                    <i class="fa fa-envelope" style="width:30px"> </i>레전드호텔 1층 광동식 차이니스 레스토랑 / 넓은 홀 다양한 룸 완비<br>
+                    <i class="fa fa-clock-o" style="width:30px"></i>매일 11:00 - 15:00  매일 17:00 - 22:00 
+                  </div>
+
+                  <!-- 메뉴 -->
+                  <!-- Menu Container -->
+            <div class="w3-container" id="menu">
+                    <div class="w3-content" style="max-width:700px">
+                
+                    <h3 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">THE MENU</span></h3>
+                    
+                    <div class="w3-row w3-center w3-card w3-padding">
+                        <a href="javascript:void(0)" onclick="openMenu(event, 'DimSum');" id="myLink">
+                        <div class="w3-col s6 tablink">DimSum</div>
+                        </a>
+                        <a href="javascript:void(0)" onclick="openMenu(event, 'Congee');">
+                        <div class="w3-col s6 tablink">Congee</div>
+                        </a>
+                    </div>
+                
+                    <div id="Dimsum" class="w3-container menu w3-padding-48 w3-card">
+                        <h5>하교</h5>
+                        <p class="w3-text-grey">새우와 해산물이 어우러진 딤섬  9.0</p><br>
+                    
+                        <h5>구채교</h5>
+                        <p class="w3-text-grey">부추와 새우가 어우러진 딤섬  9.0</p><br>
+                    
+                        <h5>파채교</h5>
+                        <p class="w3-text-grey">시금치와 새우가 어우러진 딤섬  9.0</p><br>
+                    
+                        <h5>상소분과</h5>
+                        <p class="w3-text-grey">신선한 야채, 양송이, 표고버섯이 어우러진 딤섬  9.0</p><br>
+                    
+                        <h5>긴교자</h5>
+                        <p class="w3-text-grey">돼지고기, 새우, 야채가 들어간 홍콩 딤섬  9.0</p>
+                    </div>
+                
+                    <div id="Congee" class="w3-container menu w3-padding-48 w3-card">
+                        <h5>전복죽</h5>
+                        <p class="w3-text-grey">Congee with Abalone  20.0</p><br>
+                    
+                        <h5>송이죽</h5>
+                        <p class="w3-text-grey">Congee with Mushroom  15.0</p><br>
+                    
+                        <h5>해물죽</h5>
+                        <p class="w3-text-grey">Congee with Seafood  10.0</p><br>
+                    
+                        <h5>새우죽</h5>
+                        <p class="w3-text-grey">Congee with Shrimp  8.0</p><br>
+                    
+                        <h5>송화단죽</h5>
+                        <p class="w3-text-grey">Congee with Thousand years Old Egg  7.0</p>
+                    </div>  
+                    </div>
+                </div>
+                <script>
+                        // Tabbed Menu
+                        function openMenu(evt, menuName) {
+                          var i, x, tablinks;
+                          x = document.getElementsByClassName("menu");
+                          for (i = 0; i < x.length; i++) {
+                            x[i].style.display = "none";
+                          }
+                          tablinks = document.getElementsByClassName("tablink");
+                          for (i = 0; i < x.length; i++) {
+                            tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+                          }
+                          document.getElementById(menuName).style.display = "block";
+                          evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+                        }
+                        document.getElementById("myLink").click();
+                        </script>
+
+                  
+
+                  <!-- review form -->
+                  <div class="w3-container" id="where" style="padding-bottom:32px;">
+                        <div class="w3-content" style="max-width:700px">
+                          <h3 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Review</span></h3>
+                          <p><strong>솔직한 후기를 적어주세요!</strong></p>
+                          <form action="{% url 'review_create' %}" id="reservation-form" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="성명" name="name"></p>
+                            <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="가게 이름" name="store_name"></p>
+                            <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="인원수" name="guest_count"></p>
+                            <p><textarea class="w3-input w3-padding-16 w3-border" name="body" style="height:300px;" placeholder="리뷰를 적어주세요. 최대 1000자 이내"></textarea></p>
+                            <p class="w3-center"><button class="w3-button w3-black" type="submit">WRITE</button></p>
+                          </form>
+                        </div>
+                      </div>
+                  
+    </main>
+   
+    
+</body>
+{% endblock %}
+</html>

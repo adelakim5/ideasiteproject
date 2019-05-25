@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+{% load staticfiles %}
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <title>Chinese</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <link rel="stylesheet" href="{% static 'design.css' %}" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=B612+Mono|Noto+Sans+KR" rel="stylesheet">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        </head>
+        <body>
+            <!-- navbar -->
+          
+            <!-- header  -->
+            <header class="w3-display-container w3-content w3-wide" style="max-width: 100%;" id="home" >
+                <img class="w3-image w3-opacity-min" src="https://cdn.pixabay.com/photo/2019/05/21/15/21/noodle-4219235_1280.jpg" alt="restaurant" width="100%" height="100">
+                <div class="w3-display-middle w3-margin-top w3-center">
+                    <h1 class="w3-xxlarge w3-text-black">
+                        <p>
+                            <b>중식</b><br>
+                        </p>
+                        <p class="w3-margin-top">
+                            <span class="w3-padding w3-black w3-opacity-min w3-text-white">
+                            <b>Chinese Cuisine</b>
+                            </span>
+                        </p>
+                    </h1>
+                </div>
+            </header>
+        
+            <!-- page main -->
+            <main class="w3-content w3-padding" style="max-width: 1564px">
+        
+                <!-- restaurant section -->
+                <div class="w3-container w3-padding-64" id="restaurants">
+                    <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-B612">Chinese Restaurants</h1>
+                </div>
+        
+                <div class="w3-row-padding" style="display: flex; flex-wrap: wrap;">
+                    <!--동해원 --> 
+                    <div class="w3-col m6 13 w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <div class="w3-display-topleft w3-black w3-padding"><h3>부연부</h3></div>
+                            <a href="{% url 'chinese1_dhwon' %}">
+                                <img class="w3-hover-opacity" src="https://images.unsplash.com/photo-1516211881327-e5120a941edc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjI2MDAzfQ&auto=format&fit=crop&w=1050&q=80" alt="부연부" style="width:99%">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w3-col m6 13 w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <div class="w3-display-topleft w3-black w3-padding"><h3>사천성</h3></div>
+                            <a href="{% url 'chinese2_scsung' %}">
+                                <img class="w3-hover-opacity" src="https://cdn.pixabay.com/photo/2016/10/23/09/37/restaurant-1762493_1280.jpg" alt="사천성" style="width:99%">
+                            </a>
+                        </div>
+                    </div>
+        
+                    <div class="w3-col m6 13 w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <div class="w3-display-topleft w3-black w3-padding"><h3>로충칭</h3></div>
+                            <img class="w3-hover-opacity" src="https://cdn.pixabay.com/photo/2018/09/26/13/22/food-3704606_1280.jpg" alt="로충칭" style="width:99%">
+                        </div>
+                    </div>
+                    <div class="w3-col m6 13 w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <div class="w3-display-topleft w3-black w3-padding"><h3>피탕김탕</h3></div>
+                            <img class="w3-hover-opacity" src="https://images.unsplash.com/photo-1525755662778-989d0524087e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" alt="피탕김탕" style="width:99%">
+                        </div>
+                    </div>
+                </div>
+        
+            </div> 
+
+            </main>
+            
+        </body>
+        </html>
+</body>
+{% endblock %}
+</html>

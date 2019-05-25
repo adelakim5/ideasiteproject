@@ -1,0 +1,95 @@
+<head>
+    <title>궁동에서</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=B612+Mono|Noto+Sans+KR" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <style>
+        body{
+            font-family: 'Noto+Sans+KRc', sans-serif;
+        }
+        .w3-B612{
+            font-family: 'B612 Mono', monospace;
+        }
+        #searchbar{
+            padding: 6px;
+            font-size: 17px;
+            border: 1px soild #ccc;
+        }
+        .container-fluid {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+        .margin {
+             margin-bottom: 55px;
+             margin-top: 45px;
+        }
+        .bg-1 { 
+            background-color: #CFB58B; 
+            color: #ffffff;
+        }
+
+        .aboutp{
+            font-size: 16px;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <nav class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+            <a href="{% url 'home' %}" class="w3-bar-item w3-button" style="text-decoration: none; font-size:30px">궁동에서</a>
+            <div class="search-form">
+                <form action ="{% url 'search' %}" method = "get">
+                    <input class="w3-display-middle" type="text" placeholder="Search.." id="searchbar" name="q" value="{{ q }}">
+                </form>
+            </div>
+            {% if user.is_authenticated %}
+            <ul class="nav-ul" style="margin-left:80vw;">
+                <li> 환영합니다. {{ user.username }} 님!</li>
+                <li><a href="javascript:{document.getElementById('logout').submit()}" class="w3-bar-bar-item w3-button">Logout</a>
+                    <form id="logout" method="POST" action="{% url 'logout' %}">{% csrf_token %} <input type="hidden"></form></li> 
+                <!-- float links to right -->
+            {% else %}
+                <div class="w3-right w3-hide-small w3-B612">
+                    <a href="{% url 'login' %}" class="w3-bar-item w3-button">LOG IN</a>
+                    <a href="{% url 'signup' %}" class="w3-bar-item w3-button">Sign Up</a>
+                </div>
+            {% endif %}
+            </ul>
+        </div>
+    </nav>
+<!-- header  -->
+    <!-- <header class="w3-display-container w3-content w3-wide" style="max-width: 100%;" id="home" >
+    <img class="w3-image w3-opacity-min" src="https://cdn.pixabay.com/photo/2017/08/30/17/25/restaurant-2697945_1280.jpg" alt="restaurant" width="100%" height="400">
+        <div class="w3-display-middle w3-center">
+            <h1 class="w3-xxlarge w3-text-black">
+                <p>
+                    <b>빠르고 간편한 맛집 검색</b>
+                    </p>
+                    <p class="w3-margin-top">
+                    <span class="w3-padding w3-black w3-opacity-min w3-text-white">
+                    <b>궁동에서</b>
+                    </span>
+                </p>
+            </h1>
+        </div>        
+    </header> -->
+   
+{% block contents %}
+
+{% endblock %} 
+<!-- footer -->
+<footer class="w3-center w3-black w3-opacity-min w3-padding-16 w3-B612">
+        <p>All things are created by Three Kims. <br></p>
+</footer>
+
+
+

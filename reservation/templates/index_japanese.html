@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+{% load staticfiles %}
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <title>Japanese</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <link rel="stylesheet" href="{% static 'design.css' %}" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=B612+Mono|Noto+Sans+KR" rel="stylesheet">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        </head>
+        <body>
+            <!-- navbar -->
+            
+            <!-- header  -->
+            <header class="w3-display-container w3-content w3-wide" style="max-width: 100%;" id="home" >
+                <img class="w3-image w3-opacity-min" src="https://cdn.pixabay.com/photo/2016/04/26/03/55/salmon-1353598_1280.jpg" alt="restaurant" width="100%" height="100">
+                <div class="w3-display-middle w3-margin-top w3-center">
+                    <h1 class="w3-xxlarge w3-text-black">
+                        <p>
+                            <b>일식</b><br>
+                        </p>
+                        <p class="w3-margin-top">
+                            <span class="w3-padding w3-black w3-opacity-min w3-text-white">
+                            <b>Japanese Cuisine</b>
+                            </span>
+                        </p>
+                    </h1>
+                </div>
+            </header>
+        
+            <!-- page main -->
+            <main class="w3-content w3-padding" style="max-width: 1564px">
+        
+                <!-- restaurant section -->
+                <div class="w3-container w3-padding-64" id="restaurants">
+                    <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-B612">Japanese Restaurants</h1>
+                </div>
+        
+                <div class="w3-row-padding" style="display: flex; flex-wrap: wrap;">
+                    <!--스바라시라멘  --> 
+                    <div class="w3-col m6 13 w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <div class="w3-display-topleft w3-black w3-padding"><h3>스바라시라멘</h3></div>
+                            <a href="{% url 'japanese1_sbarashi' %}">
+                                <img class="w3-hover-opacity" src="https://images.unsplash.com/photo-1478749485505-2a903a729c63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="스바라시라멘" style="width:99%">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w3-col m6 13 w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <div class="w3-display-topleft w3-black w3-padding"><h3>겐스시</h3></div>
+                            <a href="{% url 'japanese2_gensushi' %}">
+                                <img class="w3-hover-opacity" src="https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="겐스시" style="width:99%">
+                            </a>
+                        </div>
+                    </div>
+        
+                    <div class="w3-col m6 13 w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <div class="w3-display-topleft w3-black w3-padding"><h3>모리모리벤또</h3></div>
+                            <img class="w3-hover-opacity" src="https://images.unsplash.com/photo-1529065973568-41540b11f7de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="모리모리벤또" style="width:99%">
+                        </div>
+                    </div>
+                    <div class="w3-col m6 13 w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <div class="w3-display-topleft w3-black w3-padding"><h3>마쯔미라멘</h3></div>
+                            <img class="w3-hover-opacity" src="https://images.unsplash.com/photo-1555232967-d2c10a468149?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="마쯔미라멘" style="width:99%">
+                        </div>
+                    </div>
+                </div>
+        
+            </div> 
+
+            </main>
+            
+        </body>
+        </html>
+</body>
+{% endblock %}
+</html>
