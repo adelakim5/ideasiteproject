@@ -1,1 +1,1 @@
-web: gunicorn ideasiteproject.wsgi --log-file -
+web: gunicorn ideaproject.wsgi --log-file -
